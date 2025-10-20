@@ -44,7 +44,7 @@ h3 {
     list-style: none;
 }
 input,
-button{
+button {
     outline: none;
 }
 button {
@@ -141,11 +141,11 @@ ul li input[type="text"] {
     display: none;
 }
 
-ul li.editMode input[type="text"] {
+ul li.todo-app__item--editing input[type="text"] {
     display: inline-block;
     width: 224px;
 }
 
-ul li.editMode label {
+ul li.todo-app__item--editing label {
     display: none;
 }
