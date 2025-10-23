@@ -10,8 +10,8 @@
 
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incompleteTasks
-var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
+var incompleteTaskHolder=document.querySelector(".todo-app__list--incompleted");//ul of #incompleteTasks
+var completedTasksHolder=document.querySelector(".todo-app__list--completed");//completed-tasks
 
 
 //New task list item
@@ -32,6 +32,7 @@ var createNewTaskElement=function(taskString){
     //button.delete
     var deleteButton=document.createElement("button");//delete button
     var deleteButtonImg=document.createElement("img");//delete button image
+    deleteButtonImg.className = 'todo-app__button-img';
 
     label.innerText=taskString;
     // label.className='task';

@@ -17,7 +17,7 @@ body {
     font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     .header { 
         text-align: center;
     }
@@ -77,12 +77,12 @@ body {
 .todo-app__button:hover {
     color: #3a3A3a;
 }
-.todo-app__button img {
+.todo-app__button-img {
     height: 2em;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
 }
-.todo-app__button img:hover {
+.todo-app__button-img:hover {
     transform: rotateZ(0);
 }
 .todo-app__item {

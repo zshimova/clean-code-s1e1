@@ -28,7 +28,7 @@
         </section>
         <section class="todo-app__tasks-section">
             <h3 class="todo-app__section-title">Todo</h3>
-            <ul class="todo-app__list" id="incomplete-tasks">
+            <ul class="todo-app__list todo-app__list--incompleted">
                 <li class="todo-app__item">
                     <input 
                         type="checkbox"
@@ -41,7 +41,7 @@
                     >
                     <button class="todo-app__button todo-app__button--edit">Edit</button>
                     <button class="todo-app__button todo-app__button--delete">
-                        <img src="./remove.svg" alt="remove icon">
+                        <img class="todo-app__button-img" src="./remove.svg" alt="remove icon">
                     </button>
                 </li>
                 <li class="todo-app__item todo-app__item--editing">
@@ -57,7 +57,7 @@
                     >
                     <button class="todo-app__button todo-app__button--save">Save</button>
                     <button class="todo-app__button todo-app__button--delete">
-                        <img src="./remove.svg" alt="remove icon">
+                        <img class="todo-app__button-img" src="./remove.svg" alt="remove icon">
                     </button>
                 </li>
             </ul>
@@ -65,8 +65,6 @@
         <section class="todo-app__complete-section">
             <h3 class="todo-app__section-title">Completed</h3>
             <ul 
-                class="todo-app__list todo-app__list--completed"
-                id="completed-tasks"
                 class="todo-app__list todo-app__list--completed"
             >
                 <li class="todo-app__item todo-app__item--completed">
@@ -82,7 +80,7 @@
                     >
                     <button class="todo-app__button todo-app__button--edit">Edit</button>
                     <button class="todo-app__button todo-app__button--delete">
-                        <img src="./remove.svg" alt="remove icon">
+                        <img class="todo-app__button-img" src="./remove.svg" alt="remove icon">
                     </button>
                 </li>
             </ul>
