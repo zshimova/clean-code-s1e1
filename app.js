@@ -18,6 +18,7 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
+    listItem.className = "todo-app__item";
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
@@ -33,17 +34,22 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    // label.className='task';
+    label.className='todo-app__task-label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className="todo-app__checkbox";
     editInput.type="text";
-    editInput.className="task";
+    // editInput.className="todo-app__task-label";
+    editInput.className="todo-app__task-input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    // editButton.className="edit";
+    editButton.className="todo-app__button todo-app__button--edit";
 
-    deleteButton.className="delete";
+    // deleteButton.className="delete";
+    deleteButton.className="todo-app__button todo-app__button--delete";
     deleteButtonImg.src='./remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
@@ -82,9 +88,9 @@ var editTask=function(){
 
     var listItem=this.parentNode;
 
-    var editInput=listItem.querySelector('input[type=text]');
-    var label=listItem.querySelector("label");
-    var editBtn=listItem.querySelector(".edit");
+    var editInput=listItem.querySelector('.todo-app__task-input');
+    var label=listItem.querySelector(".todo-app__task-label");
+    var editBtn=listItem.querySelector(".todo-app__button--edit, .todo-app__button--save");
     var containsClass=listItem.classList.contains("todo-app__item--editing");
     //If class of the parent is .editmode
     if(containsClass){
@@ -93,9 +99,11 @@ var editTask=function(){
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
+        editBtn.className="todo-app__button todo-app__button--edit";
     }else{
         editInput.value=label.innerText;
         editBtn.innerText="Save";
+        editBtn.className="todo-app__button todo-app__button--save";
     }
 
     //toggle .editmode on the parent.
@@ -155,9 +163,9 @@ addButton.addEventListener("click",ajaxRequest);
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
-    var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button.edit");
-    var deleteButton=taskListItem.querySelector("button.delete");
+    var checkBox=taskListItem.querySelector(".todo-app__checkbox");
+    var editButton=taskListItem.querySelector(".todo-app__button--edit, .todo-app__button--save");
+    var deleteButton=taskListItem.querySelector(".todo-app__button--delete");
 
 
     //Bind editTask to edit button.
